@@ -16,6 +16,8 @@
 #include <QListView>
 #include <QListWidget>
 #include <QPalette>
+#include "qgraphics.h"
+class GraphicsWindow;
 
 using namespace std;
 
@@ -25,7 +27,7 @@ Q_OBJECT
 
 	public:
 	MainWindow();
-	void gameScreen();
+	void gameScreen();	
 //	void show();
 
 //	public slots:
@@ -38,10 +40,11 @@ Q_OBJECT
 	//stuff, then get the mainwindow view to show on top of all others after
 	//only thing i currently know how to do is just to have a massive scene already,
 	//put the start and quit button at the bottom. and once you press, it disappears
-
 	StartWindow *start;
 	QPalette* p;
+	GraphicsWindow *scene1;
 
+//QGraphicsScene *scene;
 /*
 	MainWindow* mainWindow;
 	QPushButton *start;

@@ -16,7 +16,7 @@
 #include <QGraphicsSimpleTextItem>
 #include <QListView>
 #include <QListWidget>
-//#include "mainwindow.h"
+
 class MainWindow;
 
 #define MAXHEIGHT 600

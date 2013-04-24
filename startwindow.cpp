@@ -32,6 +32,7 @@ using namespace std;
 StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 {
 //
+
 	main = temp;
 	start = new QPushButton("Start Game");
 	how = new QPushButton("How To Play");
