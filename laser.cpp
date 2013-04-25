@@ -2,7 +2,7 @@
 #include <cmath>
 #include <QFormLayout>
 #include <QLineEdit>
-
+#include <vector>
 #include <QApplication>
 #include <iostream>
 #include <QGraphicsPixmapItem>
@@ -10,11 +10,15 @@
 #include <QPixmap>
 #include <QSize>
 
-#include "enemy.h"
+#include "laser.h"
 
-Enemy::Enemy(int nx, int ny) //: Thing(nx,ny)
+using namespace std;
+
+
+Laser::Laser(int nx, int ny) //: Thing(nx,ny)
 {
-	pixmap=new QPixmap("enemy.png");
+
+	pixmap=new QPixmap("dabomb.png");
 	//pixMap = pm;
 
 	setPixmap(*pixmap);
@@ -24,16 +28,23 @@ Enemy::Enemy(int nx, int ny) //: Thing(nx,ny)
 
 }
 
-void Enemy::move()
-{}
-
-int Enemy::getX()
+int Laser::getX()
 {
 	return x;
 }
 
-int Enemy::getY()
+int Laser::getY()
 {
 	return y;
 }
+
+void Laser::move()
+{
+	this->moveBy(0,-3);
+	y-=3;
+
+}
+
+
+
 

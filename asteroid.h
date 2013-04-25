@@ -13,13 +13,22 @@
 #include <QSize>
 #include "thing.h"
 
+
+
 class Asteroid : public Thing
 {
 
 	public:
 	Asteroid(int, int);
 
+	int getX();
+	int getY();
 	void move();
+	
+	private:
+	float width;
+	float height;
+	float fx, fy; //using f to stand for float. its to slow down those damn asteroids
 	
 };
 

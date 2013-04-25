@@ -10,10 +10,12 @@
 #include <iostream>
 #include <QGraphicsPixmapItem>
 #include <QPalette>
+
 #include <QPixmap>
 #include <QSize>
 
-
+#define MAXHEIGHT 600
+#define MAXWIDTH 600
 
 class Thing : public QGraphicsPixmapItem
 {
@@ -21,8 +23,8 @@ class Thing : public QGraphicsPixmapItem
 	public:
 	//Thing(int, int);
 	virtual void move()=0;
-	//virtual int getX()=0;
-	//virtual int getY()=0;
+	virtual int getX()=0;
+	virtual int getY()=0;
 	
 	protected:
 	QPixmap *pixmap;
@@ -31,16 +33,6 @@ class Thing : public QGraphicsPixmapItem
 };
 
 
-
-/*
-class Asteroid : public Thing
-{
-
-	public:
-	Asteroid(int nx, int ny);
-};
-
-*/
 
 	
 #endif

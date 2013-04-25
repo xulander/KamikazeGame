@@ -60,7 +60,9 @@ void MainWindow::gameScreen()
 
 	scene1 = new GraphicsWindow();
 	setCentralWidget(scene1);
+	
 	scene1->setVisible(true);
+	scene1->setFocus();
 
 	//QPixmap *pix = new QPixmap;
 	//pix->load("space.png");

@@ -18,7 +18,9 @@ class Enemy : public Thing
 
 	public:
 	Enemy(int, int);
-	~Enemy();
+
+	int getX();
+	int getY();
 	void move();
 	
 };

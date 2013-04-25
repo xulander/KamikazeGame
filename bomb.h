@@ -1,5 +1,5 @@
-#ifndef BACKGROUND_H
-#define BACKGROUND_H
+#ifndef BOMB_H
+#define BOMB_H
 #include <QAction>
 #include <cmath>
 #include <QFormLayout>
@@ -11,22 +11,28 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QSize>
+#include <vector>
+
+
 #include "thing.h"
 
-class Background : public Thing
-{
+using namespace std;
 
+class Bomb : public Thing
+{	
 	public:
-	Background(int, int);
+	Bomb( int nx, int ny);
+	bool detonate();
+	void move();
 
 	int getX();
-	int getY();
-	void move();
+	int getY();	
 	
 	private:
-	double newY;
+	QPixmap *detonator;
+
+
 	
 };
-
 
 #endif

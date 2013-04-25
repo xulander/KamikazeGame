@@ -18,12 +18,17 @@
 #include <cmath>
 #include <QFormLayout>
 #include <QLineEdit>
+
+#include <vector>
 //#include "thing.h"
 #include "enemy.h"
 //#include "enemy.cpp"
 #include "spaceship.h"
 #include "asteroid.h"
-
+#include "laser.h"
+//#include "queue.h"
+//#include "queue.h"
+#include "bomb.h"
 #include <QApplication>
 #include <iostream>
 #include "background.h"
@@ -31,7 +36,7 @@
 
 #define MAXHEIGHT 600
 #define MAXWIDTH 600
-
+using namespace std;
 class GraphicsWindow : public QGraphicsView
 {
 Q_OBJECT
@@ -42,20 +47,27 @@ Q_OBJECT
 
 	public slots:
 	void handleTimer();
+	void bombTimer();
 	
 	private: 
-	bool up, down, left, right;
+	bool up, down, left, right, bomb, detonation;
 
+	QTimer *timeBomb;
 
-	int counter;
+	int counter, bombCounter, random, width, height;
 	QGraphicsScene *scene;
 	Background *scroll;
 	QPushButton *go;
 	Spaceship *space;
 	Enemy *enemy;
 	QTimer *timer;
+	Laser *lazy;
 	Asteroid *asty;
-	
+	Bomb *bomby;
+
+	vector<Laser*> bullets;
+	vector<Thing*> baddies;
+	vector<Bomb*> bombay;
 };
 
 #endif

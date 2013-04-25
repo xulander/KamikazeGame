@@ -34,4 +34,13 @@ void Background::move()
 	}
 }
 
+int Background::getX()
+{
+	return x;
+}
+
+int Background::getY()
+{
+	return y;
+}
 

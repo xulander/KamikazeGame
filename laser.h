@@ -1,5 +1,5 @@
-#ifndef BACKGROUND_H
-#define BACKGROUND_H
+#ifndef LASER_H
+#define LASER_H
 #include <QAction>
 #include <cmath>
 #include <QFormLayout>
@@ -11,22 +11,25 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QSize>
+#include <vector>
+
+
 #include "thing.h"
 
-class Background : public Thing
-{
+using namespace std;
 
+class Laser : public Thing
+{	
 	public:
-	Background(int, int);
+	Laser( int nx, int ny);
+
+	void move();
 
 	int getX();
-	int getY();
-	void move();
-	
-	private:
-	double newY;
+	int getY();	
+
+
 	
 };
-
 
 #endif

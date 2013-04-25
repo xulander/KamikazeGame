@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'qgraphics.h'
 **
-** Created: Wed Apr 24 00:50:16 2013
+** Created: Thu Apr 25 07:36:27 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_GraphicsWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -32,12 +32,13 @@ static const uint qt_meta_data_GraphicsWindow[] = {
 
  // slots: signature, parameters, type, tag, flags
       16,   15,   15,   15, 0x0a,
+      30,   15,   15,   15, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_GraphicsWindow[] = {
-    "GraphicsWindow\0\0handleTimer()\0"
+    "GraphicsWindow\0\0handleTimer()\0bombTimer()\0"
 };
 
 void GraphicsWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -47,6 +48,7 @@ void GraphicsWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         GraphicsWindow *_t = static_cast<GraphicsWindow *>(_o);
         switch (_id) {
         case 0: _t->handleTimer(); break;
+        case 1: _t->bombTimer(); break;
         default: ;
         }
     }
@@ -85,9 +87,9 @@ int GraphicsWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
