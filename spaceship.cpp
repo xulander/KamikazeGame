@@ -22,7 +22,18 @@ Spaceship::Spaceship(int nx, int ny) //: Thing(nx,ny)
 	x=nx;
 	y=ny;
 	setPos(x,y);
+	lives=15;
 
+}
+
+void Spaceship::decrease()
+{
+	lives--;
+}
+
+int Spaceship::getLives()
+{
+	return lives;
 }
 
 int Spaceship::getX()

@@ -113,7 +113,7 @@ GraphicsWindow::GraphicsWindow()//set Scrolling background. Thats it.
 	scene = new QGraphicsScene();
 
 	space = new Spaceship(300,500);
-	//enemy = new Enemy(MAXWIDTH-100,MAXHEIGHT-10);
+	//enemy = new Enemy(MAXWIDTH-50,MAXHEIGHT-90);
 	//enemy can go as far as (-40,-45) and  (MAXWIDTH-10, MAXHEIGHT-10)
 	//baddies.push_back(enemy);
 	//+26, -25);
@@ -134,6 +134,8 @@ GraphicsWindow::GraphicsWindow()//set Scrolling background. Thats it.
 
 	scene->addItem(scroll);
 	
+	
+	
 	//setZ for the background pic to -1?
 	this->setScene(scene);
 
@@ -148,20 +150,11 @@ GraphicsWindow::GraphicsWindow()//set Scrolling background. Thats it.
 void GraphicsWindow::handleTimer()
 {
 	//Moving the baddies
-	if(counter %90)
+	if(counter %50)
 	for(int i=0; i < baddies.size(); i++)
 	{
 		baddies[i]->move();	
-			/*if(bullets[i]->collidesWithItem(baddies[k]))
-			{			
-				
-				delete baddies[k];
-				delete bullets[i];
-				bullets.erase(bullets.begin()+i);	
-				baddies.erase(baddies.begin()+k);
-				break;
-
-			}*/		
+	
 		if(baddies[i]->getX() < -50){
 			delete baddies[i];
 			baddies.erase(baddies.begin()+i);
@@ -191,7 +184,7 @@ void GraphicsWindow::handleTimer()
 	
 	//Asty can go as far as ( -50 ,-45) and (MAXWIDTH-10, MAXHEIGHT-15);
 	//Handle the bad guys
-    if(counter % 200 == 0)
+   if(counter % 100 == 0)
     {
     	random = rand()%4; //go to 0-3
     	//random =1;
@@ -226,17 +219,39 @@ void GraphicsWindow::handleTimer()
     		
     	}
     	}
-
+    	
+    		//enemy = new Enemy(MAXWIDTH-100,MAXHEIGHT-10);
+	//enemy can go as far as (-40,-45) and  (MAXWIDTH-10, MAXHEIGHT-10)
+    
+    if(counter % 700 == 0)
+    {
+    	//height = rand() % (MAXHEIGHT-15) - 155;//45
+    	width = rand() % (MAXWIDTH -10) - 35;//50. The higher the number, more likely it will go ->
+    	enemy = new Enemy(width, -45);
+    	scene->addItem(enemy);
+    	baddies.push_back(enemy);
+    }
+    	
+    	
+    	    	
+	//handle space collisions
     	if(counter%15)
+    	{
     		for(int k=0; k < baddies.size(); k++)
     		{
     			if(space->collidesWithItem(baddies[k]))
     			{
+    				space->decrease();
     				delete baddies[k];
     				baddies.erase(baddies.begin()+k);
     				break;
     			}
     		}
+    		if(space->getLives() == 0)
+    		{
+    			timer->stop();
+    		}	
+    	}
     	
 
 
@@ -255,16 +270,21 @@ void GraphicsWindow::handleTimer()
 		for(int k=0; k < baddies.size(); k++)
 		{		
 			if(bullets[i]->collidesWithItem(baddies[k]))
-			{			
-
+			{	
+				baddies[k]->decrease();		
+				if(baddies[k]->getLives() == 0)
+				{
 				delete baddies[k];
 
+				
+	
+				baddies.erase(baddies.begin()+k);
+				}
 				delete bullets[i];
 
 				bullets.erase(bullets.begin()+i);
-	
-				baddies.erase(baddies.begin()+k);
 				break;
+				
 
 			}
 		}		
@@ -282,7 +302,7 @@ void GraphicsWindow::handleTimer()
 	}
 	
 
-		
+	
 	
 	//Here is the guidelines to make sure spaceship doesn't get out of bounds
 	if(space->getX() >= MAXWIDTH-59)
@@ -384,7 +404,7 @@ void GraphicsWindow::bombTimer()
 		}
 	}
 	}
-	if(bombCounter % 350==0)
+	if(bombCounter % 400==0)//originally 350
 		{
 			delete bombay[0];
 			bombay.erase(bombay.begin() +0);

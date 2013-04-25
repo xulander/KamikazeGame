@@ -22,9 +22,9 @@ class Laser : public Thing
 {	
 	public:
 	Laser( int nx, int ny);
-
+	int getLives();
 	void move();
-
+	void decrease();
 	int getX();
 	int getY();	
 

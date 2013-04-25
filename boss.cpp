@@ -6,26 +6,20 @@
 #include <QPixmap>
 #include <QSize>
 
-#include "asteroid.h"
+#include "boss.h"
 
 
-Asteroid::Asteroid(int nx, int ny) //: Thing(nx,ny)
+Boss::Boss(int nx, int ny) //: Thing(nx,ny)
 {
 	pixmap=new QPixmap("asteroid.png");
-	lives=1;
+	lives=30;
 
 	setPixmap(*pixmap);
 	x=nx;
 	y=ny;
 	setPos(x,y);
-	vx=x;
-	vy=y;
-	//width = rand() % 1+1;
-	//height = rand () % 1+1;
-	width=.35;
-	height=.35;
 }
-	//Asty can go as far as ( -50 ,-45) and (MAXWIDTH-10, MAXHEIGHT-15);
+
 
 int Asteroid::getLives()
 {

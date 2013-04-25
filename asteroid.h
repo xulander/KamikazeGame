@@ -20,11 +20,11 @@ class Asteroid : public Thing
 
 	public:
 	Asteroid(int, int);
-
+	int getLives();
 	int getX();
 	int getY();
 	void move();
-	
+	void decrease();
 	private:
 	float width;
 	float height;

@@ -18,11 +18,11 @@ class Background : public Thing
 
 	public:
 	Background(int, int);
-
+	int getLives();
 	int getX();
 	int getY();
 	void move();
-	
+	void decrease();
 	private:
 	double newY;
 	

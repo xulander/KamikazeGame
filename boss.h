@@ -1,5 +1,5 @@
-#ifndef BOMB_H
-#define BOMB_H
+#ifndef BOSS_H
+#define BOSS_H
 #include <QAction>
 #include <cmath>
 #include <QFormLayout>
@@ -11,29 +11,23 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QSize>
-#include <vector>
-
-
 #include "thing.h"
 
-using namespace std;
 
-class Bomb : public Thing
-{	
+
+class Boss : public Thing
+{
+
 	public:
-	Bomb( int nx, int ny);
-	bool detonate();
-	void move();
+	Boss(int, int);
 	int getLives();
-	void decrease();
 	int getX();
-	int getY();	
-	
-	private:
-	QPixmap *detonator;
-
+	int getY();
+	void move();
+	void decrease();
 
 	
 };
+
 
 #endif

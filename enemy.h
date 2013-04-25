@@ -21,7 +21,12 @@ class Enemy : public Thing
 
 	int getX();
 	int getY();
+	int randomNum;
+	int getLives();
+	void decrease();
 	void move();
+	int moveX;
+	float fy, fvy;
 	
 };
 

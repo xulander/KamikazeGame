@@ -43,8 +43,8 @@ Upon detonation, it has a giant blast radius.
 check out blast.jpg. I will prob size it down.
 
 ## Thing #4
-The enemies that fly towards you and try to shoot you down too. They will not try to follow you,
-but most likely follow a simple movement pattern shooting once every x amount of seconds.
+The enemies that fly towards you in a different way than asteroids. They will not try to follow you,
+but most likely follow a simple movement pattern & bounce off the wall, unlike the roids.
 They will take 2 hits to kill. o0o a TWIST! They will move slightly faster than the asteroid.
 Checkout enemy.png for sprite.
 

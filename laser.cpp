@@ -20,7 +20,7 @@ Laser::Laser(int nx, int ny) //: Thing(nx,ny)
 
 	pixmap=new QPixmap("dabomb.png");
 	//pixMap = pm;
-
+	
 	setPixmap(*pixmap);
 	x=nx;
 	y=ny;
@@ -45,6 +45,14 @@ void Laser::move()
 
 }
 
+void Laser::decrease()
+{
+	lives--;
+}
 
+int Laser::getLives()
+{
+	return 0;
+}
 
 

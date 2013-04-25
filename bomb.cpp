@@ -14,7 +14,15 @@
 
 using namespace std;
 
+int Bomb::getLives()
+{
+	return 0;
+}
 
+void Bomb::decrease()
+{
+	lives--;
+}
 
 Bomb::Bomb(int nx, int ny) //: Thing(nx,ny)
 {

@@ -53,6 +53,8 @@ Q_OBJECT
 	bool up, down, left, right, bomb, detonation;
 
 	QTimer *timeBomb;
+	
+	//QLineEdit *messageBox;
 
 	int counter, bombCounter, random, width, height;
 	QGraphicsScene *scene;

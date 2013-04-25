@@ -14,7 +14,7 @@ Background::Background(int nx, int ny) //: Thing(nx,ny)
 {
 	pixmap=new QPixmap("scroller.jpg");
 	this->setZValue(-4);
-
+	
 	setPixmap(*pixmap);
 	x=nx;
 	newY=ny;
@@ -22,6 +22,15 @@ Background::Background(int nx, int ny) //: Thing(nx,ny)
 
 }
 
+int Background::getLives()
+{
+	return 0;
+}
+
+void Background::decrease()
+{
+	lives--;
+}
 
 void Background::move()
 {

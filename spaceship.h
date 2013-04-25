@@ -25,7 +25,8 @@ class Spaceship : public Thing
 	void down();
 	void left();
 	void right();
-	
+	int getLives();
+	void decrease();
 	int getX();
 	int getY();	
 
