@@ -26,8 +26,8 @@ class Bomb : public Thing
 	void move();
 	int getLives();
 	void decrease();
-	int getX();
-	int getY();	
+	float getX();
+	float getY();	
 	
 	private:
 	QPixmap *detonator;

@@ -43,12 +43,12 @@ void Background::move()
 	}
 }
 
-int Background::getX()
+float Background::getX()
 {
 	return x;
 }
 
-int Background::getY()
+float Background::getY()
 {
 	return y;
 }

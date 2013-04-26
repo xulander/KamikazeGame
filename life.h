@@ -1,5 +1,5 @@
-#ifndef SPACESHIP_H
-#define SPACESHIP_H
+#ifndef LIFE_H
+#define LIFE_H
 #include <QAction>
 #include <cmath>
 #include <QFormLayout>
@@ -16,22 +16,17 @@
 
 #include "thing.h"
 
-class Spaceship : public Thing
+class Life : public Thing
 {	
 	public:
-	Spaceship( int nx, int ny);
+	Life(int, int);
 	void move();
-	void up();
-	void down();
-	void left();
-	void right();
+	float getX();
+	float getY();
 	int getLives();
 	void decrease();
-	float getX();
-	float getY();	
-
-
 	
 };
+	
 
 #endif

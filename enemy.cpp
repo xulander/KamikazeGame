@@ -29,6 +29,8 @@ Enemy::Enemy(int nx, int ny) //: Thing(nx,ny)
 
 }
 
+
+
 void Enemy::decrease()
 {
 	lives--;
@@ -66,12 +68,12 @@ void Enemy::move()
 
 }
 
-int Enemy::getX()
+float Enemy::getX()
 {
 	return x;
 }
 
-int Enemy::getY()
+float  Enemy::getY()
 {
 	y = fy;// do this to truncate the val
 	return y;

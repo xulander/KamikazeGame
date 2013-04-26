@@ -19,12 +19,13 @@ class Enemy : public Thing
 	public:
 	Enemy(int, int);
 
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 	int randomNum;
 	int getLives();
 	void decrease();
 	void move();
+
 	int moveX;
 	float fy, fvy;
 	

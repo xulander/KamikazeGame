@@ -21,8 +21,8 @@ class Asteroid : public Thing
 	public:
 	Asteroid(int, int);
 	int getLives();
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 	void move();
 	void decrease();
 	private:

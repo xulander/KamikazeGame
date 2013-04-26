@@ -25,8 +25,8 @@ class Laser : public Thing
 	int getLives();
 	void move();
 	void decrease();
-	int getX();
-	int getY();	
+	float getX();
+	float getY();	
 
 
 	

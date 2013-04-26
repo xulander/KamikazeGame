@@ -8,7 +8,7 @@
 
 #include "asteroid.h"
 
-
+using namespace std;
 Asteroid::Asteroid(int nx, int ny) //: Thing(nx,ny)
 {
 	pixmap=new QPixmap("asteroid.png");
@@ -20,6 +20,8 @@ Asteroid::Asteroid(int nx, int ny) //: Thing(nx,ny)
 	setPos(x,y);
 	vx=x;
 	vy=y;
+	fx=x;
+	fy=y;
 	//width = rand() % 1+1;
 	//height = rand () % 1+1;
 	width=.35;
@@ -46,44 +48,46 @@ void Asteroid :: move()
 		this->moveBy(width, height);
 		fx+=width;
 		fy+=height;
+		//cout << "Am i moving" << endl;
 		
 	}
-	else if(vx==MAXWIDTH-10)
+	if(vx==590)
 	{
 
 		this->moveBy(-width, height);
 	
 		fx-=width;
 		fy+=height;
+		//cout << fx << endl;
 	}
-	else if(vy==-45)
+	if(vy==-45)
 	{
 		this->moveBy(width, height);
 		fx+=width;
 		fy+=height;
 	}
-	else if(vy==-44)
+	if(vy==-44)
 	{
 		this->moveBy(-width, height);
 		fx-=width;
 		fy+=height;
 	}
-	else
+	/*if
 	{
 		this->moveBy(width, height);
 		fx+=width;
 		fy+=height;
-	}
+	}*/
 	
 }
 
-int Asteroid::getX()
+float Asteroid::getX()
 {
-	return x;
+	return fx;
 }
 
-int Asteroid::getY()
+float Asteroid::getY()
 {
-	return y;
+	return fy;
 }
 

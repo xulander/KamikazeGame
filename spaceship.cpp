@@ -36,12 +36,12 @@ int Spaceship::getLives()
 	return lives;
 }
 
-int Spaceship::getX()
+float Spaceship::getX()
 {
 	return x;
 }
 
-int Spaceship::getY()
+float Spaceship::getY()
 {
 	return y;
 }

@@ -1,5 +1,6 @@
 #ifndef BOSS_H
 #define BOSS_H
+
 #include <QAction>
 #include <cmath>
 #include <QFormLayout>
@@ -21,13 +22,14 @@ class Boss : public Thing
 	public:
 	Boss(int, int);
 	int getLives();
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 	void move();
 	void decrease();
+	
+
 
 	
 };
-
 
 #endif

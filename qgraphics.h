@@ -20,18 +20,20 @@
 #include <QLineEdit>
 
 #include <vector>
-//#include "thing.h"
+
 #include "enemy.h"
-//#include "enemy.cpp"
 #include "spaceship.h"
 #include "asteroid.h"
 #include "laser.h"
-//#include "queue.h"
-//#include "queue.h"
+#include "boss.h"
+
 #include "bomb.h"
 #include <QApplication>
 #include <iostream>
 #include "background.h"
+
+#include "shiplife.h"
+#include "life.h"
 
 
 #define MAXHEIGHT 600
@@ -41,22 +43,26 @@ class GraphicsWindow : public QGraphicsView
 {
 Q_OBJECT
 	public:
-	GraphicsWindow();
+	GraphicsWindow(QString);
 	void keyPressEvent (QKeyEvent *e);
 	void keyReleaseEvent(QKeyEvent *e);
+	void addScore(int);
+	int getInt();
+	QString getScore();
 
 	public slots:
 	void handleTimer();
 	void bombTimer();
 	
 	private: 
-	bool up, down, left, right, bomb, detonation;
-
+	bool up, down, left, right, bomb, detonation, pause;
+	QString s;
 	QTimer *timeBomb;
 	
-	//QLineEdit *messageBox;
-
-	int counter, bombCounter, random, width, height;
+	Boss *boss;
+	int interval;
+	QLineEdit *ready;
+	int counter, bombCounter, random, width, height, score;
 	QGraphicsScene *scene;
 	Background *scroll;
 	QPushButton *go;
@@ -67,6 +73,15 @@ Q_OBJECT
 	Asteroid *asty;
 	Bomb *bomby;
 
+	
+	int b;
+	
+	QLineEdit *winning;
+	QString scored;
+	Shiplife *lives;
+	Life *text;
+	
+	vector<Thing*> lifeCounter;
 	vector<Laser*> bullets;
 	vector<Thing*> baddies;
 	vector<Bomb*> bombay;

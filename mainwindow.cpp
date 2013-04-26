@@ -55,14 +55,16 @@ void MainWindow::gameScreen()
 //	p = new QPalette();
 //	setPalette(*p);
 	
-
+	//cout << username.toStdString() << endl;
 	start->setVisible(false);
 
-	scene1 = new GraphicsWindow();
+	scene1 = new GraphicsWindow(username);
 	setCentralWidget(scene1);
 	
 	scene1->setVisible(true);
 	scene1->setFocus();
+	
+
 
 	//QPixmap *pix = new QPixmap;
 	//pix->load("space.png");
@@ -74,5 +76,9 @@ void MainWindow::gameScreen()
 	//errthang, amiright?
 }
 
+void MainWindow::setUsername(QLineEdit *name)
+{
+	username = name->text();
+}
 
 

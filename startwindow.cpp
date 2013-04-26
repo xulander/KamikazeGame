@@ -89,11 +89,19 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 	layout->addWidget(start,0, Qt::AlignCenter);
 	layout->addWidget(how,0,Qt::AlignCenter);
 	layout->addWidget(exit,0,Qt::AlignCenter);
+	
+
+	nameInput=new QFormLayout();
+	name = new QLineEdit;
+	//name->setMaxLength(8);
+	nameInput->addRow("Enter Name:", name);
+	
+	layout->addLayout(nameInput);
 	this->setLayout(layout);
 	
 	
 	connect(start, SIGNAL(clicked()), this, SLOT(startGame()));
-	//connect(how, SIGNAL(clicked()), this, SLOT(howTo()));
+	connect(how, SIGNAL(clicked()), this, SLOT(howTo()));
 	connect(exit, SIGNAL(clicked()), this, SLOT(exitNow()));
 
 	
@@ -101,7 +109,25 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 
 void StartWindow::startGame()
 {
+	if(name->text().isEmpty() || name->text() == "Must Enter Name Before Game Start" || name->text() == "Up,down,left,right: move. Spacebar: shoot. 'b': bomb(cooldown). 'p': pause")
+	{
+		name->setText("Must Enter Name Before Game Start"); 
+		return;
+	}
+	
+	main->setUsername(name);
 	main->gameScreen();
+	//Place an if statement. Must have a correct name. If they try to start w/ the error
+	//msg, then dont allow it with that exact string. 
+	//Create a QString for their name in mainwindow private section. Save it as the 
+	//QString if its valid. Then pass it as a text and a score variable later.
+}
+
+void StartWindow::howTo()
+{
+
+	name->setText("Up,down,left,right: move. Spacebar: shoot. 'b': bomb(cooldown). 'p': pause");
+	
 }
 
 void StartWindow::exitNow()

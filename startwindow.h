@@ -16,6 +16,8 @@
 #include <QGraphicsSimpleTextItem>
 #include <QListView>
 #include <QListWidget>
+#include <QFormLayout>
+
 
 class MainWindow;
 
@@ -35,6 +37,7 @@ Q_OBJECT
 	public slots:
 	void exitNow();
 	void startGame();
+	void howTo();
 //	void quit();
 //	void createGame();
 //   	void handleTimer();
@@ -53,6 +56,8 @@ Q_OBJECT
 	QPushButton *exit;
 	QPushButton *how;
 	MainWindow *main;
+	QFormLayout *nameInput;
+	QLineEdit *name;
 	//QGraphicsSimpleTextItem *title;
 	//QLabel *font;
 	

@@ -27,7 +27,8 @@ Q_OBJECT
 
 	public:
 	MainWindow();
-	void gameScreen();	
+	void gameScreen();
+	void setUsername(QLineEdit*);	
 //	void show();
 
 //	public slots:
@@ -36,6 +37,7 @@ Q_OBJECT
 //   	void handleTimer();
 
 	
+	
 	private://im guessing delete the buttons and stuff after initial screen? how to delete 
 	//stuff, then get the mainwindow view to show on top of all others after
 	//only thing i currently know how to do is just to have a massive scene already,
@@ -43,6 +45,7 @@ Q_OBJECT
 	StartWindow *start;
 	QPalette* p;
 	GraphicsWindow *scene1;
+	QString username;
 
 //QGraphicsScene *scene;
 /*

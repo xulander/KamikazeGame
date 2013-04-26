@@ -38,12 +38,12 @@ Bomb::Bomb(int nx, int ny) //: Thing(nx,ny)
 
 }
 
-int Bomb::getX()
+float Bomb::getX()
 {
 	return x;
 }
 
-int Bomb::getY()
+float Bomb::getY()
 {
 	return y;
 }

@@ -28,12 +28,12 @@ Laser::Laser(int nx, int ny) //: Thing(nx,ny)
 
 }
 
-int Laser::getX()
+float Laser::getX()
 {
 	return x;
 }
 
-int Laser::getY()
+float Laser::getY()
 {
 	return y;
 }

@@ -19,8 +19,8 @@ class Background : public Thing
 	public:
 	Background(int, int);
 	int getLives();
-	int getX();
-	int getY();
+	float getX();
+	float getY();
 	void move();
 	void decrease();
 	private:
