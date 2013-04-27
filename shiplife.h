@@ -16,6 +16,10 @@
 
 #include "thing.h"
 
+/** Shiplife. This is the little mini icons of my ship at the top. It will let you know how many
+	* lives you have left.
+*/
+
 class Shiplife : public Thing
 {	
 	public:

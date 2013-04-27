@@ -16,6 +16,8 @@
 
 #include "thing.h"
 
+/**Life white icon*/
+
 class Life : public Thing
 {	
 	public:

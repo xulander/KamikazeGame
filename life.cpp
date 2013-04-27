@@ -12,7 +12,7 @@
 
 #include "life.h"
 
-
+/** Life icon*/
 Life::Life(int nx, int ny) 
 {
 

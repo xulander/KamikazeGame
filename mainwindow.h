@@ -21,6 +21,9 @@ class GraphicsWindow;
 
 using namespace std;
 
+/** class for MainWindow. This class calls startwindow to calling the qgraphics for all the 
+	* gameplay. */
+
 class MainWindow : public QMainWindow
 {
 Q_OBJECT
@@ -47,39 +50,7 @@ Q_OBJECT
 	GraphicsWindow *scene1;
 	QString username;
 
-//QGraphicsScene *scene;
-/*
-	MainWindow* mainWindow;
-	QPushButton *start;
-	QPushButton *exit;
-	QPushButton *how;
-	QGraphicsSimpleTextItem *title;
-	QGraphicsScene *font;
 
-	int timeCounter;
-	
-
-
-//	QLineEdit *boardSize;
-
- //  	QLineEdit *startingMoves;
- //  	QLineEdit *randSeed ;
-   	
-	QTimer* timer;
-   	
-   	QLineEdit *errorMessage;
-   	
-   	
-   	QGraphicsScene *scene;
-	QGraphicsView *view;
-	
-	
-	bool north,south,west,east; //how would you set it up so it keeps going however long hold
-//	int nextMove, i;
-//	int gauge2;
-	
-	
-*/
 
 };
 #endif

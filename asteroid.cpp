@@ -8,6 +8,8 @@
 
 #include "asteroid.h"
 
+/** Asteroid implementation. */
+
 using namespace std;
 Asteroid::Asteroid(int nx, int ny) //: Thing(nx,ny)
 {
@@ -39,6 +41,10 @@ void Asteroid::decrease()
 	lives--;
 }
 
+/** This one Ill actually explain. all those specific numbers are assigned by random in the 
+	*qgraphics window. After, once they are passed in, the follow a strict set of movements.
+	* the height always increments, but the width may vary.
+*/
 void Asteroid :: move()
 {
 

@@ -26,6 +26,13 @@ class MainWindow;
 
 using namespace std;
 
+/** My StartWindow with
+	* @PARAM MainWindow*
+	* My start window inherits from QWidget, and basically is my whole layout for the menu.
+	* I did some really cool fancy stuff to it, so if you have an eye for cool buttons and
+	* shtuff, this be it. I passed in MainWindow so I could play with it in my startwindow. 
+*/
+
 class StartWindow : public QWidget
 {
 Q_OBJECT
@@ -34,6 +41,7 @@ Q_OBJECT
 	StartWindow(MainWindow*);
 //	void show();
 
+/** Some simple slots. Self explanatory*/
 	public slots:
 	void exitNow();
 	void startGame();

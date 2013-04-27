@@ -13,7 +13,7 @@
 #include <QSize>
 #include "thing.h"
 
-
+/** Asteroid thing class. */
 
 class Asteroid : public Thing
 {

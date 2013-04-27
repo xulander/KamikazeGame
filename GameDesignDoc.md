@@ -21,6 +21,8 @@ you can relaunch it. I will probably use the time counter %150==0 or something f
 ## The Background
 It will just be a sliding background.
 
+==See picture scroller.jpg
+
 ## The Spaceship
 The spaceship will be a simple picture of a spaceship. It will just move side to side, and up
 and down. Pressing the spacebar will shoot. Nothing too special here. You have a health bar.
@@ -28,43 +30,59 @@ In reality, it just takes 5 hits to kill you. If you get a life that floats arou
 refill your whole health bar. If you die, the game goes to a GAME OVER screen with your score.
 Keep track of life via counter
 
+==Open newship.png
+
 ## Thing #1
 Thing #1 will be simple asteroids that just fly around that you can try to avoid, or shoot down
 to make them dissapear or explode. They will randomly move from a random direction straight from
 1 end of the screen to another. They will generally move pretty slow.
-Checkout asteroidBeforeCrop.jpg or asteroid-sprite.gif
+
+==Checkout asteroid.png
 
 ## Thing #2
 The 1st bullet that shoots out of the front of his ship. Kills 1 thing on collision.
 
+==Check out dabomb.png
+
 ## Thing #3
 The 2nd bomb bullet. This one will be deployed like a normal bullet, with a different picture.
-Upon detonation, it has a giant blast radius. 
-check out blast.jpg. I will prob size it down.
+Upon detonation, it has a giant blast radius. The bottom right corner will tell you when a 
+bomb is ready vs not ready.
+
+===check out BlueExplosion.png and bombmain.png
 
 ## Thing #4
 The enemies that fly towards you in a different way than asteroids. They will not try to follow you,
 but most likely follow a simple movement pattern & bounce off the wall, unlike the roids.
 They will take 2 hits to kill. o0o a TWIST! They will move slightly faster than the asteroid.
-Checkout enemy.png for sprite.
+
+===Checkout enemy.png for sprite.
 
 ## Thing #5
-The big bad boss. He will be probably a cool image I find on Google, or Mr Crowleys head. Whichever
-suffices :) He will need roughly 20 hits to kill. Maybe the bomb will do 3 hits equivalent to a 
-normal bullet????????? WE WILL SEEE THE SUSPENSEE!
+The big bad boss, or so his name says. He is actually just kind of like a blackhole. Your bullets
+and bomb do not affect him, and if you touch him, you die.
+
+
 
 ## Scoring
-If you hit something, your score will go up. The score will be revealed at the end of the game,
-unless i find an easy way to reveal it WHILE you play. Asteroid = 50 pts. Enemy ship = 150.
-Boss = 1000. may change later.
+If you hit something, your score will go up. The score will be revealed at the bottom left,
+unless i find an easy way to reveal it WHILE you play. Hitting an enemy is 10pts. enemy ships
+take 2 hits, thus give 20 pts.
+
+==See shipLives.png for the little ship lives, and Lives.png for the lives icon.
 
 ## Other buttons, interface, actions
-There isn't much more. The whole beginning interface is buttons. After that, the only actions
-would be the keyboard actions with a scrolling interface. There isn't much after that!
+There isn't much more. The whole beginning interface is buttons & a qlineedit.
+ After that, the only actions would be the keyboard actions with a scrolling interface. T
+ here isn't much after that!
+ 
 
-
-##Interface 
+##Interface Menu
 Interface is extremely simple. It will just have a background with buttons to click with
-your mouse. I will draw a crude example of it.
+your mouse. I will draw a crude example of it. JK now i have the full example. I have 3 
+buttons. 1 is start, 2nd is how to play, and 3rd is exit. How to play puts rules at the bottom.
+Must need name input to play. 
+
+==see space.png for background menu
 
 

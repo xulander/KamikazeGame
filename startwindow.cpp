@@ -29,6 +29,12 @@ using namespace std;
 //MUST CREAT A MENU BAR..
 //QMenuBar *menubar = mewnuBar....
 
+/** Now this is where the magic begins. Sorry if oyu can see the // comments. I have a ton.
+	* Simple stuff. I put them all into a QVBoxLayout. Here you can see some cool stuff,
+	* like where I put the buttons to flat and fonts. I also do my QLineEdits to make sure
+	* the person has to enter a name
+*/
+
 StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 {
 //
@@ -106,6 +112,10 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 
 	
 }	
+
+/** I check right before I really start this function to make sure they actually enter a string.
+	* you can really enter anything, but itll only process up to a certain amount of chars.
+*/
 
 void StartWindow::startGame()
 {

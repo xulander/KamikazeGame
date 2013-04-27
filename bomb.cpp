@@ -14,6 +14,8 @@
 
 using namespace std;
 
+/** Bomb implementation. Simple stuff */
+
 int Bomb::getLives()
 {
 	return 0;

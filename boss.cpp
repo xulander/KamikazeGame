@@ -7,7 +7,7 @@
 
 #include "boss.h"
 
-
+/** Boss, or eamon constructor and class. */
 Boss::Boss(int nx, int ny) //: Thing(nx,ny)
 {
 	pixmap=new QPixmap("boss.png");

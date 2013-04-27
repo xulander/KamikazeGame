@@ -17,6 +17,12 @@
 #define MAXHEIGHT 600
 #define MAXWIDTH 600
 
+/** My basic Thing virtual function. It has the essentials. Originally, the getX and getY functions
+	* were ints, but I made them into floats. Why? Because I only moved some stuff decimals,
+	* not a full 1 pixel. It was annoying to change all the subsequent classes that inherited
+	* from this, but yolo.
+*/
+
 class Thing : public QGraphicsPixmapItem
 {
 

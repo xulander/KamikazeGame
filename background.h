@@ -13,6 +13,8 @@
 #include <QSize>
 #include "thing.h"
 
+/** My background class. Use it to move my background up and down */
+
 class Background : public Thing
 {
 

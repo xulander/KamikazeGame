@@ -16,6 +16,7 @@
 
 #include "thing.h"
 
+/** Bomb class inheriting Thing */
 using namespace std;
 
 class Bomb : public Thing

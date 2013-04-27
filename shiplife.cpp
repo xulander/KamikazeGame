@@ -12,7 +12,10 @@
 
 #include "shiplife.h"
 
-
+/** Where the implementation happens. I forgot to say that the 
+	* @param of ints is how i set the position. This goes without saying for the rest of the
+	* inherited thing classes, so i wont re-iterate this. I hope you udnerstand.
+*/
 Shiplife::Shiplife(int nx, int ny) 
 {
 

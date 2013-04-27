@@ -16,6 +16,8 @@
 
 #include "thing.h"
 
+/** Do the inheritance party! For my spaceship herooooo */
+
 class Spaceship : public Thing
 {	
 	public:

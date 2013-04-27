@@ -14,6 +14,7 @@
 
 using namespace std;
 
+/** im da laser like tick, tick*/
 
 Laser::Laser(int nx, int ny) //: Thing(nx,ny)
 {

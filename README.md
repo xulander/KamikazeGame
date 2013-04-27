@@ -1,24 +1,35 @@
 # Game - Programming Assignments Private Repository
 ### Student Information
-  + Name: Tommy Trojan
-  + USC Email: ttrojan@usc.edu
-  + USC ID: 0123456789
+  + Name: Elvis Xu
+  + USC Email: elvisxu@usc.edu
+  + USC ID: 9172654186
 
 ### Game Information
-  + Game Name: myAwsomeGame
-  + Game Description: One sentence game description
+  + Game Name: Kamikaze
+  + Game Description: A badass game that is eerily similar to Asteroids... what?
   + [Game Design Doc](GameDesignDoc.md)
 
 
 ### Compile & Run Instructions
 The grader should use the following procedure to compile and run the code:
-```shell
+make clean
+qmake -project
+qmake
+make
+./(input the game name folder here)
 #Compile Instructions
-echo "Write command here"
+make clean
+qmake -project
+qmake
 #Doxygen Instructions
 echo "Write command here"
+
+doxygen -g config.txt
+doxygen config.txt
+doxygen -doxy
 #Command to run
 echo "Write command here"
+Do the ./ run command on folder name
 ```
 
 ### Screenshots -- [Optional]

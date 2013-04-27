@@ -13,6 +13,7 @@
 #include <QSize>
 #include "thing.h"
 
+/** Enemy thing. Floats like butterfly, stings like a rhinoceros.....or a bee. */
 class Enemy : public Thing
 {
 

@@ -30,6 +30,10 @@ using namespace std;
 //MUST CREAT A MENU BAR..
 //QMenuBar *menubar = mewnuBar....
 
+/** Mainwindow implementation. Calls the constructor. simple stuff. This space background is for
+	* my main menu. I set it to visible
+*/
+
 MainWindow::MainWindow()
 {       
 
@@ -48,7 +52,7 @@ MainWindow::MainWindow()
         //set the qgraphics off for now. Once button is pressed, call another function in this.
         //Then you switch everything over to the game play.
 }
-
+/** I set a new central widget, and delete my old one and palette. Then, i set focus */
 void MainWindow::gameScreen()
 {
 //	delete p;

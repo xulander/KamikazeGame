@@ -35,6 +35,14 @@
 #include "shiplife.h"
 #include "life.h"
 
+/** Wht more can i say. This is where the magic is all implemented. This is like the castle, where
+	* uncle Merlin practices his spells before using it on the idiot people of the dark ages.
+	* Hah. the dark ages...
+	* Here is just all my pointer and basic declarations. Will go more in detail in cpp.
+	* only thing of significance is the constructor, which passses in a
+	* @param of QString. This QString holds the players name, so I can put it in the bottom 
+	* left.
+*/
 
 #define MAXHEIGHT 600
 #define MAXWIDTH 600

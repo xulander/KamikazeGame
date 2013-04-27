@@ -12,6 +12,11 @@
 
 #include "enemy.h"
 
+/** Enemy constructor and implementation. Nothin special. Ill admit there are probably some 
+	* unnecessary variables and random stuff, but it made during the time I still used a 
+	* getX and getY as ints. After changing it to float, i dont want to change my code naymore
+*/
+
 Enemy::Enemy(int nx, int ny) //: Thing(nx,ny)
 {
 	pixmap=new QPixmap("enemy.png");

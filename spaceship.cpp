@@ -12,6 +12,9 @@
 
 #include "spaceship.h"
 
+/** Lives decrease if hit. You know how a player do.
+*/
+
 Spaceship::Spaceship(int nx, int ny) //: Thing(nx,ny)
 {
 

@@ -8,7 +8,8 @@
 
 #include "background.h"
 
-
+/** Background implementation with my scroller stuff. setZValue to -4, so it never interrupts
+	* gameplay. */
 
 Background::Background(int nx, int ny) //: Thing(nx,ny)
 {

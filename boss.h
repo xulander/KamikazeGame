@@ -14,7 +14,9 @@
 #include <QSize>
 #include "thing.h"
 
-
+/** Boss, aka Eamon. Hes just like a blackhole. If you touch him, you die. None of the bullets
+	* work on him.
+*/
 
 class Boss : public Thing
 {

@@ -31,9 +31,19 @@
 #include "qgraphics.h"
 
 
-//class Thing;
 
 using namespace std;
+/** Make it nasty. Here is my keypresssevent. Here and KeyReleaseEvent is where my real genius
+	* and attention to detail shows. Pressing a key only makes it true, while letting go
+	* of a key makes it false. The reason for this is because before I did this, my 
+	* character would move right. And if i held it, he'd move right a bit faster. If i kept
+	* holding it, then he'd speed off. I wanted a smooth consistent speed, liek a real game.
+	* Alas, I have done it.
+	* I also set up my other buttons here. I usualyl just set stuff to true and false, and
+	* play with them in the timer
+	* I handle the pauses to make sure you cant do anything when you actually die vs when
+	* you are paused.
+*/
 
 void GraphicsWindow::keyPressEvent(QKeyEvent *e)
 {
@@ -94,6 +104,9 @@ void GraphicsWindow::keyPressEvent(QKeyEvent *e)
 	
 }
 
+/** Look above for my doxygen comments for keypressevent. it reveals my true geneeeous. That's
+	* how you spell geneeeeous, right?
+*/
 void GraphicsWindow::keyReleaseEvent(QKeyEvent *e)
 {
 	int key = e->key();
@@ -117,6 +130,11 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent *e)
 		break;
 	}
 }
+/** Constructor. I pass in @param QString for the username. I don't declare it in main, 
+	* cause i never really play with it after. I also do some little detail stuff, like
+	* spacing for certain objects, finding when they are barely on the screen and mostly off,
+	* and the spacing for lives and stuff.
+*/
 
 GraphicsWindow::GraphicsWindow(QString username)//set Scrolling background. Thats it. 
 {
@@ -251,6 +269,15 @@ winning->setText(scored);
 	
 }
 
+/** Handle my timer. I know that some of my if statement counters dont really do anything
+	* example: if(counter%50)
+	* I didnt make it ==0 cause i forgot originally, but it ends up working great.
+	* My timer handles literally EVERYTHING. It loads up enemies every x amount of seconds,
+	* and then I delete them once they are out of scope or hit. Getting them to delete and 
+	* out of the array was tricky, but i figured it out. I also do the Bomb stuff in here.
+	* bomb was tricky too, as it was 2 pictures, so i had to create a 2nd timer for it.
+*/
+
 void GraphicsWindow::handleTimer()
 {
 counter++;
@@ -367,22 +394,23 @@ counter++;
     	{
     		for(int k=0; k < baddies.size(); k++)
     		{
-    			if(space->collidesWithItem(baddies[k]))
-    			{
-    				
-    				//space->decrease();
-    				delete baddies[k];
-    				baddies.erase(baddies.begin()+k);
-    				//delete lifeCounter[space->getLives()];
-    				//lifeCounter.erase(lifeCounter.begin() + space->getLives());
-    				break;
-    			}
-    			if(space->collidesWithItem(boss))
+    		    	 if(space->collidesWithItem(boss))
     			{
     				space->decrease();
+    				delete lifeCounter[space->getLives()];
+    				lifeCounter.erase(lifeCounter.begin() + space->getLives());
+    				break;
+    			}	
+    			if(space->collidesWithItem(baddies[k]))
+    			{
+    				space->decrease();
+    				delete baddies[k];
+    				baddies.erase(baddies.begin()+k);
+    				delete lifeCounter[space->getLives()];
     				lifeCounter.erase(lifeCounter.begin() + space->getLives());
     				break;
     			}
+   
     		}
     		if(space->getLives() == 0)
     		{
@@ -546,6 +574,10 @@ counter++;
 
 }
 
+/** I know we weren't supposed to use a second timer, but I had to to make sure the bomb 
+	* explosion lasted for awhile. Cause I knew it wasnt specifically good to use 2 timers,
+	* I made sure to regulate how this timer is used with strict regulations
+*/
 
 void GraphicsWindow::bombTimer()
 {
@@ -581,7 +613,7 @@ void GraphicsWindow::bombTimer()
 
 }		
 
-
+/** Add score and rest of simple functions here... */
 void GraphicsWindow::addScore(int i)
 {
 	score+=i;

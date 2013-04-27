@@ -16,6 +16,7 @@
 
 #include "thing.h"
 
+/** Pew pew thing lasers! */
 using namespace std;
 
 class Laser : public Thing
