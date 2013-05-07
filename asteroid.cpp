@@ -26,8 +26,8 @@ Asteroid::Asteroid(int nx, int ny) //: Thing(nx,ny)
 	fy=y;
 	//width = rand() % 1+1;
 	//height = rand () % 1+1;
-	width=.35;
-	height=.35;
+	width=.25;
+	height=.25;
 }
 	//Asty can go as far as ( -50 ,-45) and (MAXWIDTH-10, MAXHEIGHT-15);
 
