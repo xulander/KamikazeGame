@@ -16,8 +16,12 @@
 #include <QVBoxLayout>
 #include <QAction>
 #include <cmath>
+#include <string>
 #include <QFormLayout>
+#include <QLabel>
+#include <fstream>
 #include <QLineEdit>
+#include "pig.h"
 
 #include <vector>
 
@@ -29,6 +33,7 @@
 
 #include "bomb.h"
 #include <QApplication>
+#include "tracker.h"
 #include <iostream>
 #include "background.h"
 
@@ -57,6 +62,7 @@ Q_OBJECT
 	void addScore(int);
 	int getInt();
 	QString getScore();
+	void endScreen();
 
 	public slots:
 	void handleTimer();
@@ -80,6 +86,9 @@ Q_OBJECT
 	Laser *lazy;
 	Asteroid *asty;
 	Bomb *bomby;
+	
+	Tracker *tracky;
+	Pig *piggy;
 
 	
 	int b;
@@ -88,6 +97,11 @@ Q_OBJECT
 	QString scored;
 	Shiplife *lives;
 	Life *text;
+	QLineEdit *playerScore;
+	QLineEdit *player;
+	QString username1;
+	
+	
 	
 	vector<Thing*> lifeCounter;
 	vector<Laser*> bullets;

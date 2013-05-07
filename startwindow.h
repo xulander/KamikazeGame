@@ -45,6 +45,7 @@ Q_OBJECT
 	public slots:
 	void exitNow();
 	void startGame();
+
 	void howTo();
 //	void quit();
 //	void createGame();
@@ -63,6 +64,7 @@ Q_OBJECT
 	QPushButton *start;
 	QPushButton *exit;
 	QPushButton *how;
+
 	MainWindow *main;
 	QFormLayout *nameInput;
 	QLineEdit *name;

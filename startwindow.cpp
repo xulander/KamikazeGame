@@ -42,7 +42,9 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 	main = temp;
 	start = new QPushButton("Start Game");
 	how = new QPushButton("How To Play");
+
 	exit = new QPushButton("Exit Game");
+	
 
 	//this->setFixedSize(500,400);
 	start->setMaximumWidth(50);
@@ -55,6 +57,7 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 	exit->setPalette(color);
 	exit->setStyleSheet("background-color:black;");
 	exit->setFlat(true);
+
 	how->setPalette(color);
 	how->setStyleSheet("background-color:black;");
 	how->setFlat(true);
@@ -67,6 +70,8 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 	how->setFont(QFont("Comic Sans Ms", 18, QFont::Bold));
 		exit->setFixedSize(buttonSize);
 	exit->setFont(QFont("Comic Sans Ms", 18, QFont::Bold));
+
+	
 
 	
 	
@@ -94,6 +99,7 @@ StartWindow::StartWindow(MainWindow* temp)//pass into this mainwindow(this)
 	layout->addWidget(me);
 	layout->addWidget(start,0, Qt::AlignCenter);
 	layout->addWidget(how,0,Qt::AlignCenter);
+
 	layout->addWidget(exit,0,Qt::AlignCenter);
 	
 

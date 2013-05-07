@@ -25,6 +25,7 @@
 #include <QFont>
 #include <QLineEdit>
 #include <QApplication>
+
 #include <iostream>
 #include <QSize>
 #include <QKeyEvent>
@@ -138,7 +139,7 @@ void GraphicsWindow::keyReleaseEvent(QKeyEvent *e)
 
 GraphicsWindow::GraphicsWindow(QString username)//set Scrolling background. Thats it. 
 {
-
+	username1=username;
 	/*QVBoxLayout * layout = new QVBoxLayout();
 	layout->addWidget(this);
 	
@@ -165,6 +166,7 @@ GraphicsWindow::GraphicsWindow(QString username)//set Scrolling background. That
     	timer->setInterval(4);
     	timeBomb = new QTimer(this);
     	timeBomb->setInterval(5);
+    	
 	
 	
 	setSceneRect(0,0,MAXHEIGHT,MAXWIDTH);
@@ -256,7 +258,15 @@ scored = this->getScore();
 winning->setText(scored);
 
 
-	
+tracky = new Tracker(0, 150, space);
+scene->addItem(tracky);
+baddies.push_back(tracky);
+tracky = new Tracker(0, 150, space);
+scene->addItem(tracky);
+baddies.push_back(tracky);
+
+piggy = new Pig(200, 0);
+scene->addItem(piggy);
 	
 	//setZ for the background pic to -1?
 	this->setScene(scene);
@@ -286,17 +296,26 @@ counter++;
 		interval-=20;
 		//cout << "counting down" << endl;
 		timer->setInterval(3);
+		tracky = new Tracker(0, 150, space);
+scene->addItem(tracky);
+baddies.push_back(tracky);
 	}
 	
 	if(counter % 16000 == 0 && interval == 80)
 	{
 		interval-=20;
+		tracky = new Tracker(0, 150, space);
+scene->addItem(tracky);
+baddies.push_back(tracky);
 		//cout << "counting down" << endl;
 		//timer->setInterval(2);
 	}
 	if(counter % 24000 == 0 && interval == 60)
 	{
 		interval-=20;
+		tracky = new Tracker(0, 150, space);
+scene->addItem(tracky);
+baddies.push_back(tracky);
 		//cout << "counting down" << endl;
 	}
 
@@ -416,6 +435,14 @@ counter++;
     		{
     			timer->stop();//output Game Over
     			ready->setText("Game Over");
+    			//delete space;
+    			//space->setZValue(-5);
+    			
+    			//delete boss;
+    			//delete text;
+    			
+    			endScreen();
+    			//jump to new background 
     		}	
     	}
     	
@@ -525,8 +552,14 @@ counter++;
 		for(int i=0; i < bombay.size(); i++)
 		{
 			bombay[i]->move();
+			
 			for(int k=0; k < baddies.size(); k++)
 			{		
+				if(bombay[i]->collidesWithItem(piggy))
+				{
+					piggy->move(bombay[i]);
+					break;
+				}
 				if(bombay[i]->collidesWithItem(boss))
 				{
 					delete bombay[i];
@@ -622,6 +655,162 @@ void GraphicsWindow::addScore(int i)
 int GraphicsWindow::getInt()
 {
 	return score;
+}
+
+/** Here is my doxygen stuff. Endscreen brings up high scores. I first make my title. I use the
+	* Exact same format I did with the qlineedits at the bottom, except I call this up after
+	* I die. Read through score. If current score is > than that, put in current score first. 
+	* Then push back the string of the name. Then pushback the rest of it. If no scores left,
+	* input the current score. Make sure you dont re-input same score twice, so use a 
+	* boolean value to check if already push_backed this current game score stuff
+	* if push_back more than 10, break
+*/
+
+//if file doesn't exist, just output a name and score onto game. Then create the file and 
+//input the 2 stuff.
+void GraphicsWindow::endScreen()
+{
+QLineEdit *scorey = new QLineEdit;
+
+scorey->setReadOnly(true);
+
+scorey->setText("High Scores");
+	QFont font("Comic Sans Ms", 14, QFont::Bold);
+	scorey->setFont(font);
+	
+	QPalette color;
+	color.setColor(QPalette::ButtonText, Qt::white);
+	scorey->setPalette(color);
+
+	
+scorey->setGeometry(240,50, 135, 40);
+
+
+scorey->setWindowOpacity(.5);//.5
+
+
+scorey->setFrame(false);
+	QGraphicsProxyWidget *proxy4 = scene->addWidget(scorey);
+	
+	
+//Read through score. If current score is > than that, put in current score first. Then 
+//push back the string of the name. Then pushback the rest of it.
+//if push_back more than 10, break
+
+//if file doesn't exist, just output a name and score onto game. Then create the file and 
+//input the 2 stuff.
+	
+
+	ifstream file("scores.txt");
+	//ostream
+	int height=100;
+	if(file.fail())
+	{
+		playerScore = new QLineEdit;
+		playerScore->setText(username1);
+		playerScore->setFont(font);
+		playerScore->setPalette(color);
+		playerScore->setReadOnly(true);
+		playerScore->setWindowOpacity(.5);
+		playerScore->setFrame(false);
+		playerScore->setGeometry(120, height, 100, 40);
+		proxy4= scene->addWidget(playerScore);
+		
+		player = new QLineEdit;
+		player->setText(scored);
+		player->setFont(font);
+		player->setPalette(color);
+		player->setReadOnly(true);
+		player->setWindowOpacity(.5);
+		player->setFrame(false);
+		player->setGeometry(360, height, 100, 40);
+		proxy4= scene->addWidget(player);
+		
+		ofstream fout;
+		fout.open("scores.txt");
+		fout << username1.toStdString() << endl << score << endl;
+		fout.close();
+	}	
+	else
+	{
+	
+//Read through score. If current score is > than that, put in current score first. Then 
+//push back the string of the name. Then pushback the rest of it.
+//if push_back more than 10, break
+		string name;
+		int savedScore;
+		vector<int> scoringVector;
+		vector<string> names;
+		bool checker=false;
+		
+		getline(file, name);
+		file >> savedScore;
+		file.ignore(10, '\n');
+		while(!file.eof())
+		{
+		
+			
+			
+			if(score >= savedScore && !checker)
+			{
+				scoringVector.push_back(score);
+				names.push_back(username1.toStdString());
+				checker=true;
+			}
+			
+			scoringVector.push_back(savedScore);
+			names.push_back(name);
+			
+			
+			if(names.size() > 9)
+				break;
+			
+			getline(file, name);
+			file >> savedScore;
+			file.ignore(10, '\n');
+			if(file.eof()&& checker==false)
+			{
+				scoringVector.push_back(score);
+				names.push_back(username1.toStdString());
+			}
+			
+		}
+		file.close();
+
+		ofstream fout("scores.txt");
+		
+		for(int i=0; i < scoringVector.size(); i++)
+		{
+			fout << names[i] << endl << scoringVector[i] << endl;
+		QString users = QString::fromStdString(names[i]);
+		playerScore = new QLineEdit;
+		playerScore->setText(users);
+		playerScore->setFont(font);
+		playerScore->setPalette(color);
+		playerScore->setReadOnly(true);
+		playerScore->setWindowOpacity(.5);
+		playerScore->setFrame(false);
+		playerScore->setGeometry(120, height, 150, 40);
+		proxy4= scene->addWidget(playerScore);
+		
+		QString Scoring = QString::number(scoringVector[i]);
+		player = new QLineEdit;
+		player->setText(Scoring);
+		player->setFont(font);
+		player->setPalette(color);
+		player->setReadOnly(true);
+		player->setWindowOpacity(.5);
+		player->setFrame(false);
+		player->setGeometry(380, height, 100, 40);
+		proxy4= scene->addWidget(player);
+		height +=40;
+			
+		}
+		
+		fout.close();
+		
+	}
+	
 }
 
 QString GraphicsWindow::getScore()
