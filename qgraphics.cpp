@@ -159,6 +159,7 @@ GraphicsWindow::GraphicsWindow(QString username)//set Scrolling background. That
 	counter=score=0;	
 	up=down=left=right=detonation=pause=false;
 	bomb=true;
+	scroller=true;
 	
 	bombCounter=0;
 	interval=100;
@@ -290,9 +291,12 @@ scene->addItem(piggy);
 
 void GraphicsWindow::handleTimer()
 {
-counter++;
-	if(counter % 8000 == 0 && interval != 80)
+counter++;//8000, 16000, 24000
+	if(counter % 8000 == 0 && interval == 100)
 	{
+		scroller=false;
+		delete scroll;
+		scene->setBackgroundBrush(Qt::black);
 		interval-=20;
 		//cout << "counting down" << endl;
 		timer->setInterval(3);
@@ -304,6 +308,7 @@ baddies.push_back(tracky);
 	if(counter % 16000 == 0 && interval == 80)
 	{
 		interval-=20;
+		scene->setBackgroundBrush(Qt::red);
 		tracky = new Tracker(0, 150, space);
 scene->addItem(tracky);
 baddies.push_back(tracky);
@@ -312,12 +317,17 @@ baddies.push_back(tracky);
 	}
 	if(counter % 24000 == 0 && interval == 60)
 	{
+		
+		scene->setBackgroundBrush(Qt::blue);
 		interval-=20;
+		
 		tracky = new Tracker(0, 150, space);
 scene->addItem(tracky);
 baddies.push_back(tracky);
+
 		//cout << "counting down" << endl;
 	}
+
 
 
 	//Moving the baddies
@@ -498,7 +508,7 @@ baddies.push_back(tracky);
 	
 	
 	//handle background
-	if(counter%5==0)
+	if(counter%5==0&&scroller)
 	{
 		scroll->moveBy(0,.5);
 		scroll->move();

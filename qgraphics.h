@@ -69,7 +69,7 @@ Q_OBJECT
 	void bombTimer();
 	
 	private: 
-	bool up, down, left, right, bomb, detonation, pause;
+	bool up, down, left, right, bomb, detonation, pause, scroller;
 	QString s;
 	QTimer *timeBomb;
 	
