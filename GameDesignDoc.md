@@ -12,6 +12,28 @@ as you continue, the level will become increasingly harder with more items poppi
 
 Basic Picture showing what it will look like: IMAG0691.jpg
 
+#Game Extra Credit Changes To Look For
+
+##Thing 1 (EC Tracking Thing)
+The New bomb. It comes out of the face every time a new level starts. He tracks you, albeit slightly
+differently than how you recommended we should code it in the wiki. It still does track you though,
+so it still counts. The only way to stop it from hitting you is killing it first.
+
+##Thing 2 (EC Tracking Thing)
+The other thing is the angry bird pig at the top. He doesn't do anything, but if you try to
+shoot a bomb at him, he will dodge it. That should fulfill the "Avoid Being Hit" tracking thing.
+
+##NewBackgrounds (EC)
+The backgrounds now just change into solid background colors if you make it to the next level.
+No more cool animation bckgrounds. I asked if it was okay in an issue, and they said yeah.
+
+##High Scores
+I included an exampleScores.txt. Just go to line 714 and 791 to "exampleScores.txt" if you want
+to have scores already included. If not, just keep playing and the scores will auto update.
+If you want to play a few games, just dont touch the code at all. It is still coded for
+"scores.txt"
+
+
 # Game Play
 You will be using the keyboard for gameplay. The keyboard directions will move the spaceship,
 while the spacebar will shoot the missle. The 'b' button will shoot a bomb with a big blast

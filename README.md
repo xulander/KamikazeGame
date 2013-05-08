@@ -32,5 +32,9 @@ echo "Write command here"
 Do the ./ run command on folder name
 ```
 
+#How To Play
+Make sure to look at instructions in GameDesignDoc to find the EC stuff. Some are harder to find
+than others.
+
 ### Screenshots -- [Optional]
 You can either remove this section or add screenshots if you wish.

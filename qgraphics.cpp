@@ -673,7 +673,7 @@ int GraphicsWindow::getInt()
 	* Then push back the string of the name. Then pushback the rest of it. If no scores left,
 	* input the current score. Make sure you dont re-input same score twice, so use a 
 	* boolean value to check if already push_backed this current game score stuff
-	* if push_back more than 10, break
+	* if push_back more than 10, break. 
 */
 
 //if file doesn't exist, just output a name and score onto game. Then create the file and 
@@ -710,7 +710,7 @@ scorey->setFrame(false);
 //if file doesn't exist, just output a name and score onto game. Then create the file and 
 //input the 2 stuff.
 	
-
+	//changedhere for examplescores
 	ifstream file("scores.txt");
 	//ostream
 	int height=100;
@@ -737,6 +737,7 @@ scorey->setFrame(false);
 		proxy4= scene->addWidget(player);
 		
 		ofstream fout;
+		
 		fout.open("scores.txt");
 		fout << username1.toStdString() << endl << score << endl;
 		fout.close();
@@ -786,7 +787,7 @@ scorey->setFrame(false);
 			
 		}
 		file.close();
-
+		//changehere for examplescores
 		ofstream fout("scores.txt");
 		
 		for(int i=0; i < scoringVector.size(); i++)
