@@ -9,6 +9,11 @@
   + Game Description: A badass game that is eerily similar to Asteroids... what?
   + [Game Design Doc](GameDesignDoc.md)
 
+###IMPORTANT NOTES
+There are some functions/items I particularly don't like in the game; however, they are there
+for the extra credit portions for my class. My friend's face, the angry bird pig at the top, 
+and the solid color backgrounds are a few examples. Without the solid color background changes,
+the original sliding background would reset once it hits its end. 
 
 ### Compile & Run Instructions
 The grader should use the following procedure to compile and run the code:
